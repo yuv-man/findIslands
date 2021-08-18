@@ -2,6 +2,8 @@ import React, {useState, useContext} from 'react'
 import {useHistory} from "react-router-dom"
 import {MatrixContext} from '../libs/MatrixContext'
 import {createMatrix} from '../libs/CreateMatrix'
+import {FaRandom, FaPencilAlt} from 'react-icons/fa'
+import {GiIsland} from 'react-icons/gi'
 import '../styles/MainScreen.css'
 
 function MainScreen() {
@@ -14,8 +16,7 @@ function MainScreen() {
         setValue(e.target.value)
     }
 
-    const handleSubmit = (e, isRandom) => {
-        e.preventDefault()
+    const handleSubmit = (isRandom) => {
         const rowAndCol = value.split(',')
         setRows(rowAndCol[0])
         setCols(rowAndCol[1])
@@ -26,14 +27,14 @@ function MainScreen() {
 
     return (
         <div>
-          <div className='title'>Welcome to the Find Islands Game</div> 
+          <div className='title'><GiIsland/> FIND THE ISLANDS <GiIsland/></div> 
           <div>
-            <input className='input' type="test" placeholder="Bitmap size: n, m" value={value} onChange={handleChange}/>
+            <input className='input' type="text" placeholder="Bitmap size: n, m" value={value} onChange={handleChange}/>
           </div>
           <div>
-            <button className='button' onClick={(e) => handleSubmit(e, true)}>Randomize</button> 
+            <button className='main-btn' onClick={() => handleSubmit(true)}><FaRandom size={15}/>Randomize</button> 
           </div>
-          <button className='button' onClick={(e) => handleSubmit(e, false)}>Draw</button>
+          <button className='main-btn' onClick={() => handleSubmit(false)}><FaPencilAlt/>  Draw</button>
         </div>
     )
 }

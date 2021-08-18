@@ -4,6 +4,8 @@ import {MatrixContext} from '../libs/MatrixContext'
 import '../styles/Matrix.css'
 import Game from './Game'
 import {numOfIslands} from '../libs/CountIslands'
+import {GiIsland} from 'react-icons/gi'
+import {FaSearch, FaArrowLeft} from 'react-icons/fa'
 
 function Matrix() {
 
@@ -12,8 +14,7 @@ function Matrix() {
     const history = useHistory()
     const isRandom = history.location.state
 
-    const goBack = (e) => {
-        e.preventDefault()
+    const goBack = () => {
         history.push('/')
     }
 
@@ -25,11 +26,13 @@ function Matrix() {
 
     return (
         <div>
-            <div className='islandsTitle'>The Islands</div>
+            <div className='islandsTitle'>The Islands   <GiIsland/></div>
             <Game grid={grid} isRandom={isRandom}/>
             {islands && <div>There are {islands} islands</div>}
-            <button className='matrix-btn' onClick={findIslands}>Find Islands</button>
-            <button className='matrix-btn' onClick={goBack}>back to main</button>
+            <div>
+                <button className='matrix-btn' onClick={findIslands}><FaSearch/> Find islands</button>
+            </div>
+            <button className='matrix-btn' onClick={goBack}><FaArrowLeft size={10}/>  back to main</button>
         </div>
     )
 }
