@@ -1,0 +1,12 @@
+.cell {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border: 1px solid black;
+    background: #f8f8f8;
+    margin-right: 2px;
+  }
+
+  .island {
+    background-color: black;
+  }
