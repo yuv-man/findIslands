@@ -13,3 +13,9 @@
     color: white;
     margin-top: 10px;
 }
+
+.game {
+    display: grid;
+    grid-template-rows: repeat();
+    grid-template-columns: repeat();
+}

@@ -1,6 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
+  display: flex;
   text-align: center;
-  margin-top: 100px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 
