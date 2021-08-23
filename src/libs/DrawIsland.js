@@ -1,7 +1,7 @@
 
 
 export const drawIsland = (grid, r,c, num) => {
-        let matrix = grid
+        let matrix = [...grid]
         if(num === 0){
             matrix[r][c].num = 1
         } else {

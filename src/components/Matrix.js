@@ -30,7 +30,7 @@ function Matrix() {
     return (
         <div>
             <div className='islandsTitle'>The Islands   <GiIsland/></div>
-            <Game className='game' grid={grid} isRandom={isRandom}/>
+            {/* <Game className='game' grid={grid} isRandom={isRandom}/> */} (// the previous game without canvas//)
             <div>
                 <Canvas isRandom={isRandom}>
                     <Grid width={cols*TILE_SIZE} height={rows*TILE_SIZE}>
