@@ -8,7 +8,7 @@ function App() {
   const [rows, setRows] = useState('')
   const [cols, setCols] = useState('')
   const [grid, setGrid] = useState([])
-  const TILE_SIZE = 20
+  const TILE_SIZE = (rows > 819 || cols > 819)? 10:20
 
   return (
     <div className="App">

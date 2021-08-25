@@ -11,16 +11,18 @@ const Tile = ({grid}) => {
         let randomNum = 0
         if(typeof item === 'string'){
             const islandNum = item.split('-')[1]
-            if(islandNum > 9){
-                randomNum = (Math.floor(islandNum*167772).toString(16));
+            const islandStr = islandNum.toString().length -1
+            const colorGen = 1677721
+            const colorSlice = (colorGen.toString().slice(0, -islandStr))
+            if(islandNum < 10){
+                randomNum = (Math.floor(islandNum*colorGen).toString(16));
             } else {
-                randomNum = (Math.floor(islandNum*1677721).toString(16));
+                randomNum = (Math.floor(islandNum*colorSlice).toString(16));
             }
             colorNum = '#' + randomNum
         } else {
             colorNum = 'black'
         }
-        console.log(colorNum)
         return colorNum
     }
 
